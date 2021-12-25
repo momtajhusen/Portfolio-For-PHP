@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Rye&display=swap" rel="stylesheet">
 
   <!--.................................. CDN ..................................-->
 
@@ -83,21 +83,19 @@
         require("Admin/php/database.php");
 
                   // Header Details Reteive
-                      $header = "SELECT * FROM header  LIMIT 1"; 
+                        $header = "SELECT * FROM header  LIMIT 1"; 
                         $get_header_response = $db->query($header);
                         $header_data = $get_header_response->fetch_assoc();
-
                         $header_img  =  $header_data['img'];
                         $header_name  =  $header_data['name'];
                         $i_am  =  $header_data['i_am'];
 
                   // Resume Details Reteive
-                  $resume_upload = "SELECT * FROM resume_upload  LIMIT 1"; 
-                  $resume_upload_response = $db->query($resume_upload);
-                  $resume_data = $resume_upload_response->fetch_assoc();
-
-                  $cv_type =  $resume_data['cv_type'];
-                  $cv_path  =  $resume_data['cv_path']; 
+                        $resume_upload = "SELECT * FROM resume_upload  LIMIT 1"; 
+                        $resume_upload_response = $db->query($resume_upload);
+                        $resume_data = $resume_upload_response->fetch_assoc();
+                        $cv_type =  $resume_data['cv_type'];
+                        $cv_path  =  $resume_data['cv_path']; 
 
                   // About Details Reteive
                         $about = "SELECT * FROM about  LIMIT 1"; 
@@ -244,7 +242,7 @@
       <div class="profile">
         
         <img src="<?php echo $about_img; ?>" class="img-fluid rounded-circle mb-3">
-        <h1 class="text-light"><a href="index.html"><?php echo $header_name; ?></a></h1>
+        <h1 class="text-light"><a href="#" style="font-family: 'Rye', cursive; letter-spacing: 1px;"><?php echo $header_name; ?></a></h1>
         <div class="social-links mt-3 text-center">
           <a href="<?php echo $Url_a; ?>" class="twitter <?php echo 'd-'.$Select_a; ?>"><i class="fa <?php echo $Select_a; ?>"></i></a>
           <a href="<?php echo $Url_b; ?>" class="facebook  <?php echo 'd-'.$Select_b; ?>"><i class="fa <?php echo $Select_b; ?>"></i></a>
@@ -256,7 +254,7 @@
 
       <nav id="navbar" class="nav-menu navbar"> 
         <ul>
-          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Homes</span></a></li>
+          <li><a href="#hero" class="nav-link scrollto active"><i class="bx bx-home"></i> <span>Home</span></a></li>
           <li><a href="#about" class="nav-link scrollto"><i class="bx bx-user"></i> <span>About</span></a></li>
           <li><a href="#skills" class="nav-link scrollto"><i class="fa fa-book"></i> <span>Skills</span></a></li>
           <li class="<?php echo $Resume_display; ?>" ><a href="#resume" class="nav-link scrollto"><i class="bx bx-file-blank"></i> <span>Resume</span></a></li>
@@ -288,7 +286,7 @@
           <a class="animate__animated animate__bounceInDown animate__delay-4s " style="font-size: 18px; display: inline-block; background: #212431; color: #fff; line-height: 1; padding: 8px 0; margin-right: 4px; border-radius: 50%; text-align: center; width: 36px; height: 36px; transition: 0.3s;" href="<?php echo $Url_e; ?>" class="linkedin <?php echo 'd-'.$Select_e; ?>"><i class="fa <?php echo $Select_e; ?>"></i></a>
         </div>
 
-<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="assets/img/resume-cv.pdf" download="<?php echo $header_name.'_.pdf'; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
+<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="<?php echo $cv_path; ?>" download="<?php echo $header_name.'_'.$cv_type; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
 
        <div class="w-100 h-25 d-flex justify-content-center align-items-center flex-column " ><a href="#about" style=" text-decoration: none; color: #ccc;" class="nav-link scrollto"><div class=" d-lg-none d-flex justify-content-center align-items-center flex-column"> SCROLL DOWN <i class="fa fa-angle-double-down animate__animated animate__fadeInDown animate__slow animate__delay-5s animate__infinite	mt-3" style="font-size:30px;" ></i></div></a> </div>
      </div>
@@ -860,26 +858,26 @@
 
                     <div class="mb-3 d-flex justify-content-center flex-column" >
                       <span style="margin-bottom:5px;">Your Name</span>
-                      <input type="text" id="message_name" required name="name">
+                      <input type="text" required name="name">
                     </div>
 
                     <div class="mb-3 d-flex justify-content-center flex-column" >
                       <span style="margin-bottom:5px;">Your Email</span>
-                      <input type="email" id="message_email" required name="email">
+                      <input type="email" required name="email">
                     </div>
 
                     <div class="mb-3 d-flex justify-content-center flex-column" >
                       <span style="margin-bottom:5px;">Subject</span>
-                      <input type="text" id="message_subject" required name="subject">
+                      <input type="text" required name="subject">
                     </div>
 
                     <div class="mb-3 d-flex justify-content-center flex-column" >
                       <span style="margin-bottom:5px;">Message</span>
-                       <textarea name="message" id="message" required cols="5" rows="8"></textarea>
+                       <textarea name="message" required cols="5" rows="8"></textarea>
                     </div>
 
                     <div class="mb-3 d-flex justify-content-center align-items-center">
-                      <input class="submit bg-info" type="submit" value="SEND MESSAGE">
+                      <input class="submit" type="submit" value="SEND MESSAGE">
                     </div>
 
                 </form>
@@ -928,6 +926,7 @@
      $(document).ready(function(){
       $(".message_form").submit(function(e){
          e.preventDefault();
+
           $.ajax({
             type : "POST",
             url : "Admin/php/email_send.php",
@@ -935,34 +934,9 @@
             contentType : false,
             processData : false,
             catch : false,
-            beforeSend: function beforeSend() {
-              $(".submit").attr("value", "wait..");
-              $(".submit").attr("disabled","disabled");
-              $(".submit").removeClass( "bg-info" );
-              $(".submit").addClass( "bg-secondary" );
-
-              $("#message_name").attr("disabled","disabled");
-              $("#message_email").attr("disabled","disabled");
-              $("#message_subject").attr("disabled","disabled");
-              $("#message").attr("disabled","disabled");
-            
-            },
             success : function(response){
+              alert(response);
               $('#message_form')[0].reset();
-              $(".submit").attr("value", "MESSAGE SEND SUCCESS");
-              $(".submit").removeAttr("disabled");
-              $("#message_name").removeAttr("disabled");
-              $("#message_email").removeAttr("disabled");
-              $("#message_subject").removeAttr("disabled");
-              $("#message").removeAttr("disabled");
-              $(".submit").removeClass( "bg-secondary" );
-              $(".submit").addClass( "bg-success" );
-
-              setTimeout(function(){
-                $(".submit").attr("value", "SEND MESSAGE");
-                $(".submit").removeClass( "bg-success" );
-                $(".submit").addClass( "bg-info" );
-	    	    	},2000);
             }
           });
 
