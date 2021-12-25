@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.9.0.1
+-- version 5.1.1
 -- https://www.phpmyadmin.net/
 --
--- Host: sql302.byetcluster.com
--- Generation Time: Dec 17, 2021 at 09:40 AM
--- Server version: 5.7.35-38
--- PHP Version: 7.2.22
+-- Host: 127.0.0.1
+-- Generation Time: Dec 25, 2021 at 05:14 PM
+-- Server version: 10.4.20-MariaDB
+-- PHP Version: 8.0.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -19,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Database: `epiz_30522185_dipak_portfolio`
+-- Database: `portfolio`
 --
 
 -- --------------------------------------------------------
@@ -49,7 +48,28 @@ CREATE TABLE `about` (
 --
 
 INSERT INTO `about` (`img`, `About_as`, `you_are`, `you_are_as`, `Birthday`, `Age`, `Website`, `Degree`, `Phone`, `PhEmailone`, `City`, `Freelance`, `Officiis_eligendi`) VALUES
-('assets/img/profile-img.jpg', 'Dipak Singh', 'UI/UX Designer & Web Developer.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '21 Sep 1999', '22', 'www.dipakkushwaha.com', 'Diploma', '(+91) 9557158326', 'deepak36884@gmail.com', 'Janakpur Dham', ' Available', 'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.');
+('assets/img/profile-img.jpg', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', 'UI/UX Designer & Web Developer.', 'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.', '21 Sep 1999', '22', 'www.dipakkushwaha.com', 'Diploma', '(+91) 9557158326', 'deepak36884@gmail.com', 'Janakpur Dham', ' Available', 'Officiis eligendi itaque labore et dolorum mollitia officiis optio vero. Quisquam sunt adipisci omnis et ut. Nulla accusantium dolor incidunt officia tempore. Et eius omnis. Cupiditate ut dicta maxime officiis quidem quia. Sed et consectetur qui quia repellendus itaque neque. Aliquid amet quidem ut quaerat cupiditate. Ab et eum qui repellendus omnis culpa magni laudantium dolores.');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `user` varchar(100) NOT NULL,
+  `pass` varchar(100) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`user`, `pass`) VALUES
+('', ''),
+('', ''),
+('', ''),
+('admin', 'admin');
 
 -- --------------------------------------------------------
 
@@ -69,7 +89,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_as`, `Location`, `Email`, `Call_No`) VALUES
-('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.', 'Nagarain Nagarpalika Fhulgama -04', '                   deepak36884@gmail.com sunny58326@gmail.com', '(+91) 9557158326 (+977) 9809636884');
+('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas. Lorem ipsum dolor sit amet, consectetur adipisc', 'Nagarain Nagarpalika Fhulgama -04', ' deepak36884@gmail.com sunny58326@gmail.com', '(+91) 9557158326 (+977) 9809636884');
 
 -- --------------------------------------------------------
 
@@ -115,7 +135,7 @@ CREATE TABLE `header` (
 --
 
 INSERT INTO `header` (`img`, `name`, `i_am`) VALUES
-('assets/img/hero-bg.jpg', 'Er.Dipak Kushwaha', 'Developer, Photographer, Designer, Freelancer');
+('assets/img/hero-bg.jpg', 'Er.Dipak ', 'Developer, Photographer, Designer, Freelancer');
 
 -- --------------------------------------------------------
 
