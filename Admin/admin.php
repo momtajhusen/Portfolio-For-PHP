@@ -618,7 +618,8 @@ else
             <input name="social-media-btn" type="checkbox" checked data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
           </div>   
         </div>
-
+       
+        <!-- Social select attribute  -->
         <span class="a_check_select" val="<?php echo 'a_'.$select_a; ?>"></span>
         <span class="b_check_select" val="<?php echo 'b_'.$select_b; ?>"></span>
         <span class="c_check_select" val="<?php echo 'c_'.$select_c; ?>"></span>
@@ -627,11 +628,12 @@ else
  
  
         <select name="a_select" class="a_select" class="mt-2" id="1_select">
-          <option class="a_fa-facebook-f"  value="fa-facebook-f">Facebook</option>
+          <option class="a_fa-facebook-f"  value="fa-facebook-f"><i class="fa fa-calendar" aria-hidden="true"></i>Facebook</option>
           <option class="a_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="a_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="a_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="a_fa-linkedin" value="fa-linkedin">Iinkedin</option>
+          <option class="a_fa-github" value="fa-github">GitHub</option>
           <option class="a_none" value="none">Remove</option>
         </select>
         <input name="a_url_input" value="<?php echo $url_a; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
@@ -642,6 +644,8 @@ else
           <option class="b_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="b_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="b_fa-linkedin" value="fa-linkedin">Iinkedin</option>
+          <option class="b_fa-github" value="fa-github">GitHub</option>
+          <option class="b_fa-github" value="fa-github">GitHub</option>
           <option class="b_none" value="none">Remove</option>
         </select>
         <input name="b_url_input" value="<?php echo $url_b; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
@@ -652,6 +656,7 @@ else
           <option class="c_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="c_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="c_fa-linkedin" value="fa-linkedin">Iinkedin</option>
+          <option class="c_fa-github" value="fa-github">GitHub</option>
           <option class="c_none" value="none">Remove</option>
         </select>
         <input name="c_url_input" value="<?php echo $url_c; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
@@ -663,6 +668,7 @@ else
           <option class="d_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="d_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="d_fa-linkedin" value="fa-linkedin">Iinkedin</option>
+          <option class="d_fa-github" value="fa-github">GitHub</option>
           <option class="d_none" value="none">Remove</option>
         </select>
         <input name="d_url_input" value="<?php echo $url_d; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
@@ -674,6 +680,7 @@ else
           <option class="e_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="e_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="e_fa-linkedin" value="fa-linkedin">Iinkedin</option>
+          <option class="e_fa-github" value="fa-github">GitHub</option>
           <option class="e_none" value="none">Remove</option>
         </select>
         <input name="e_url_input" value="<?php echo $url_e; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
@@ -779,7 +786,7 @@ about_img_btn.onchange = evt => {
   }
 }
 
-
+// Social icon select 
 $(document).ready(function(){
   var chek =  "."+$(".a_check_select").attr("val");
   $(chek).attr("selected","selected");
@@ -804,6 +811,8 @@ $(document).ready(function(){
   var chek =  "."+$(".e_check_select").attr("val");
   $(chek).attr("selected","selected");
 });
+
+ 
 
 
 // about picture change //

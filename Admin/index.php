@@ -42,6 +42,7 @@
         width:100%;
         height:100vh;
         background: #F5D2BB;
+        overflow:hidden;
     }
 
     .sigin_box{
@@ -123,22 +124,22 @@
  
        <form class="login_form w-100 mt-3 pt-3 pb-1 d-flex align-items-center flex-column" enctype="multipart/form-data">
 
-          <div class="mb-3 w-75 pr-4 input-div d-flex justify-content-center align-items-center">
+          <div class="mb-3 w-75 pr-4 input-div d-flex justify-content-center align-items-center animate__animated animate__zoomIn animate__slow animate__delay-2s">
            <i class="fa fa-user" style="font-size:20px; color:white;" aria-hidden="true"></i>
            <input type="text" required name="username" class="username py-2 w-100 pl-3" placeholder="Username">
           </div>
 
-          <div class="mb-2 w-75 pr-4 input-div d-flex justify-content-around align-items-center">
-          <i class="fa fa-key animate__animated animate__swing animate__infinite animate__slower	3s" style="font-size:20px; color:white;" aria-hidden="true"></i>
+          <div class="mb-2 w-75 pr-4 input-div d-flex justify-content-around align-items-center animate__animated animate__zoomIn animate__slow animate__delay-3s">
+           <i class="fa fa-key animate__animated animate__swing animate__infinite animate__slower 3s" style="font-size:20px; color:white;" aria-hidden="true"></i>
            <input type="password" required name="password" class="password py-2 w-100 pl-3" placeholder="Password">
            <i class="fa fa-eye open-eye" style="font-size:20px; color:white;" aria-hidden="true"></i>
            <i class="fa fa-eye-slash close-eye d-none" style="font-size:20px; color:white;" aria-hidden="true"></i>
           </div>
           
-          <p class="mb-2 w-75 d-flex justify-content-end align-items-end">Forget password .</p>
+          <p class="mb-2 w-75 d-flex justify-content-end align-items-end animate__animated animate__slideInRight animate__slow animate__delay-4s">Forget password .</p>
           
           <div class="mb-2 w-75">
-             <input type="submit" value="Login" id="submit" class="submit  w-100 btn mb-2" style="background-color:#B689B0;">
+             <input type="submit" value="Login" id="submit" class="submit animate__animated animate__zoomInDown animate__slow  w-100 btn mb-2" style="background-color:#B689B0;">
           </div>
 
        </form>
