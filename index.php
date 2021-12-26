@@ -286,7 +286,7 @@
           <a class="animate__animated animate__bounceInDown animate__delay-4s " style="font-size: 18px; display: inline-block; background: #212431; color: #fff; line-height: 1; padding: 8px 0; margin-right: 4px; border-radius: 50%; text-align: center; width: 36px; height: 36px; transition: 0.3s;" href="<?php echo $Url_e; ?>" class="linkedin <?php echo 'd-'.$Select_e; ?>"><i class="fa <?php echo $Select_e; ?>"></i></a>
         </div>
 
-<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="<?php echo $cv_path; ?>" download="<?php echo $header_name.'_'.$cv_type; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
+<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="assets/img/resume-cv.pdf" download="<?php echo $header_name.'_pdf'; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
 
        <div class="w-100 h-25 d-flex justify-content-center align-items-center flex-column " ><a href="#about" style=" text-decoration: none; color: #ccc;" class="nav-link scrollto"><div class=" d-lg-none d-flex justify-content-center align-items-center flex-column"> SCROLL DOWN <i class="fa fa-angle-double-down animate__animated animate__fadeInDown animate__slow animate__delay-5s animate__infinite	mt-3" style="font-size:30px;" ></i></div></a> </div>
      </div>
