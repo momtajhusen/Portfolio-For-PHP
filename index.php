@@ -241,7 +241,7 @@
 
       <div class="profile">
         
-        <img src="<?php echo $about_img; ?>" class="img-fluid rounded-circle mb-3">
+        <img src="assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid rounded-circle mb-3">
         <h1 class="text-light"><a href="#"><?php echo $header_name; ?></a></h1>
         <div class="social-links mt-3 text-center">
           <a href="<?php echo $Url_a; ?>" class="twitter <?php echo 'd-'.$Select_a; ?>"><i class="fa <?php echo $Select_a; ?>"></i></a>
@@ -267,7 +267,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero"  style="background: url('<?php echo $header_img; ?>') top center;  background-size: cover; position:relative;" class="d-flex flex-column justify-content-center align-items-center">
+  <section id="hero"  style="background: url('assets/img/hero-bg.jpg?v=<?php echo time(); ?>') top center;  background-size: cover; position:relative;" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container w-100 d-flex justify-content-center align-items-center flex-column" data-aos="fade-in">
       
       <div>
@@ -305,7 +305,7 @@
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="<?php echo $about_img; ?>" class="img-fluid" alt="">
+            <img src="assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <div class=" justify-content-center align-items-center flex-column" style="font-size:30px; font-weight: bold; " ><?php echo $you_are; ?></div>

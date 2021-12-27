@@ -288,7 +288,7 @@ else
     <div class="bg-dark d-flex justify-content-center align-items-center text-light  p-2" >Header</div>
 
     <div class="header-pic" >
-      <img id="blah" src="<?php echo '../'.$header_img; ?>" alt="your image">
+      <img id="blah" src="../assets/img/hero-bg.jpg?v=<?php echo time(); ?>" alt="your image">
     </div>
 
      <label  class="change-img-btn d-flex justify-content-center align-items-center" for="imgInp">Change image 1920 x 1280</label>
@@ -311,9 +311,6 @@ else
     
 
 
- 
-  
-
     </div>
 
     <!-- About  -->
@@ -321,7 +318,7 @@ else
       <div class="bg-dark d-flex justify-content-center align-items-center text-light  p-2" >About</div>
       
       <div class="header-pic" >
-       <img id="about_img" src="<?php echo '../'.$about_img; ?>" alt="your image">
+       <img id="about_img" src="../assets/img/profile-img.jpg?v=<?php echo time(); ?>" alt="your image">
       </div>
 
       <label  class="change-img-btn d-flex justify-content-center align-items-center" for="about_img_btn">Change image 600 x 600</label>
