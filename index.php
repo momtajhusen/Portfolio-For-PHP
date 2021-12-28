@@ -89,6 +89,7 @@
                         $header_img  =  $header_data['img'];
                         $header_name  =  $header_data['name'];
                         $i_am  =  $header_data['i_am'];
+                        $time  =  $header_data['time'];
 
                   // Resume Details Reteive
                         $resume_upload = "SELECT * FROM resume_upload  LIMIT 1"; 
@@ -241,7 +242,7 @@
 
       <div class="profile">
         
-        <img src="assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid rounded-circle mb-3">
+        <img src="assets/img/profile-img.jpg?v=<?php echo $time; ?>" class="img-fluid rounded-circle mb-3">
         <h1 class="text-light"><a href="#"><?php echo $header_name; ?></a></h1>
         <div class="social-links mt-3 text-center">
           <a href="<?php echo $Url_a; ?>" class="twitter <?php echo 'd-'.$Select_a; ?>"><i class="fa <?php echo $Select_a; ?>"></i></a>
@@ -267,7 +268,7 @@
   </header><!-- End Header -->
 
   <!-- ======= Hero Section ======= -->
-  <section id="hero"  style="background: url('assets/img/hero-bg.jpg?v=<?php echo time(); ?>') top center;  background-size: cover; position:relative;" class="d-flex flex-column justify-content-center align-items-center">
+  <section id="hero"  style="background: url('assets/img/hero-bg.jpg?v=<?php echo $time; ?>') top center;  background-size: cover; position:relative;" class="d-flex flex-column justify-content-center align-items-center">
     <div class="hero-container w-100 d-flex justify-content-center align-items-center flex-column" data-aos="fade-in">
       
       <div>
@@ -286,7 +287,7 @@
           <a class="animate__animated animate__bounceInDown animate__delay-4s <?php echo 'd-'.$Select_e; ?>" style="font-size: 18px; display: inline-block; background: #212431; color: #fff; line-height: 1; padding: 8px 0; margin-right: 4px; border-radius: 50%; text-align: center; width: 36px; height: 36px; transition: 0.3s;" href="<?php echo $Url_e; ?>" class="linkedin <?php echo 'd-'.$Select_e; ?>"><i class="fa <?php echo $Select_e; ?>"></i></a>
         </div>
 
-<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="assets/img/resume-cv.pdf" download="<?php echo $header_name.'_pdf'; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
+<a class="animate__animated animate__lightSpeedInRight animate__delay-5s" href="assets/img/resume-cv.pdf" download="<?php echo $header_name.'.pdf'; ?>" style="font-size: 18px; color: #fff;transition: 0.3s;"><div class="p-2 text-light bg-gradient " style="border:0.5px solid #ddd; box-shadow: 10px 5px 5px #dd; border-radius: 5px;" >DOWNLOAD MY <?php echo $cv_type; ?></div></a>
 
        <div class="w-100 h-25 d-flex justify-content-center align-items-center flex-column " ><a href="#about" style=" text-decoration: none; color: #ccc;" class="nav-link scrollto"><div class=" d-lg-none d-flex justify-content-center align-items-center flex-column"> SCROLL DOWN <i class="fa fa-angle-double-down animate__animated animate__fadeInDown animate__slow animate__delay-5s animate__infinite	mt-3" style="font-size:30px;" ></i></div></a> </div>
      </div>
@@ -305,7 +306,7 @@
 
         <div class="row">
           <div class="col-lg-4" data-aos="fade-right">
-            <img src="assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid" alt="">
+            <img src="assets/img/profile-img.jpg?v=<?php echo $time; ?>" class="img-fluid" alt="">
           </div>
           <div class="col-lg-8 pt-4 pt-lg-0 content" data-aos="fade-left">
             <div class=" justify-content-center align-items-center flex-column" style="font-size:30px; font-weight: bold; " ><?php echo $you_are; ?></div>
