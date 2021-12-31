@@ -127,7 +127,7 @@
 
 <div class="sigin_box">
      <div id="header" class="header   w-100 pt-3 pb-1  d-flex justify-content-center align-items-center flex-column">
-         <div style="background-image: url('../assets/img/profile-img.jpg?v=<?php echo $time; ?>'); " class="logo-box bg-dark rounded-circle mb-2"></div>
+         <div style="background-image: url('../assets/img/profile-img.jpg?v=<?php echo time(); ?>'); " class="logo-box bg-dark rounded-circle mb-2"></div>
          <h4 class="text-light">ADMIN LOGIN</h4>
          <p class="p-0 m-0">Enter your Admin Username and Password.</p>
      </div>
@@ -175,6 +175,7 @@ $(document).ready(function() {
 
   }); 
 });
+
 
 $(document).ready(function(){
       $(".login_form").submit(function(e){

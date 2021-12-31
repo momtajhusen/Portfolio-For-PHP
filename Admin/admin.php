@@ -27,7 +27,11 @@ else
   <!--.................................. CDN ..................................-->
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 
 <!-- JS, Popper.js, jQuery, Bootstrap.js-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -79,6 +83,7 @@ else
            width:400px;
            box-shadow:0px 0px 5px 3px black;
            background: #000232;
+           position: relative;
        }
 
       .header{
@@ -117,8 +122,24 @@ else
           border-bottom:0px;
           opacity: 0.5;
       }
+      
 
-      .change-img-btn{
+      .header-pic-mobile{
+          width:100%;
+          border:2px solid red;
+          border:2px dashed #ddd;
+          border-bottom:0px;
+          opacity: 0.5;
+      }
+
+      
+      .header-pic-mobile img{
+          width:45%;
+      }
+ 
+
+ 
+      .change-img-btn,.change_img_mobile{
           width:100%;
           padding:10px;
           border:none;
@@ -129,6 +150,8 @@ else
           border-top:0px;
           opacity: 0.5;
       }
+
+ 
 
       form{
         background: #000232;
@@ -210,8 +233,24 @@ else
         top:-100%;
         z-index: 1;
         transition: 1s;
-        box-shadow: 0 8px 6px -6px black;
-        box-shadow: 5px 0 5px -2px black;
+        box-shadow: 0px 8px 6px -6px black;
+      }
+
+      .progress_con{
+        width:100%;
+        border-radius:5px;
+        z-index:1;
+        position:  fixed;
+        top:45%;
+        left:0px;
+      }
+
+      .progress-center{
+        width:350px;
+        height:200px;
+        background:#0D0C4A;
+        box-shadow: 0px 0px 10px 5px black;
+        border-radius:10px;
       }
 
 
@@ -220,8 +259,26 @@ else
 <body   class="d-flex justify-content-center align-items-center bg-dark">
 <!-- Container  -->
 <div class="contener">
-<div class="menu-content">
-      content
+  <!-- Menu Container profile  -->
+<div class="menu-content pt-5">
+      <div class="w-100 h-25 mt-4 d-flex justify-content-center align-items-center" style="border-bottom: 5px solid #010333;">
+        <div style="  width:130px; height:130px;border-radius:100px;border-bottom: 5px solid #010333;" >
+          <img src="../assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid rounded-circle mb-3">
+       </div>
+      </div>
+
+      <div class="w-100 text-light p-3" style="background:#0D0C4A">
+      <i class="fa fa-unlock-alt mt-2" style="font-size:21px;" aria-hidden="true"></i> Change Password 
+      </div>
+
+      <div class="w-100 text-light p-3" style="background:#000232">
+        <i class="fa fa-users ml-3" aria-hidden="true"></i>  Visitor Analytics
+      </div>
+
+      <div class="w-100 text-light p-3" style="background:#0D0C4A">
+      <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </div>
+
   </div>
 
 
@@ -368,22 +425,36 @@ else
                     $url_c  =  $social_media_data['url_c'];
                     $url_d  =  $social_media_data['url_d'];
                     $url_e  =  $social_media_data['url_e'];
-                    
- 
-
-
-
- 
-  
     ?>
-           
+
+    <?php 
+      // Header Details Reteive
+      $query = "SELECT * FROM visitor"; 
+      $query_response = $db->query($query);
+      $visitor_data = $query_response->fetch_assoc();
+
+      $country  =  $visitor_data['country'];
+      $region  =  $visitor_data['region'];
+      $city  =  $visitor_data['city'];
+      $os  =  $visitor_data['os'];
+      $browser  =  $visitor_data['browser'];
+ 
+
+       $date = new DateTime($visitor_data['time']);
+ 
+
+    // $date = date('h:i:s A');
+
+     
+    ?>
+
     <div class="header pl-4 d-flex">
       <div class="w-75 pl-5 h-100 d-flex justify-content-center align-items-center animate__animated animate__backInDown" style="font-size:20px; font-family: 'Anton', sans-serif;   letter-spacing: 2px;">
         <?php echo $header_name; ?>
       </div>
 
       <div class="w-25 h-100 d-flex justify-content-center align-items-center animate__animated animate__jello animate__infinite animate__slower animate__delay-2s ">
-          <i class="fa fa-bars" id="menu-icon" aria-hidden="true" style="font-size:25px;" ></i> <i class="fa fa-times close-icon d-none" aria-hidden="true" style="font-size:25px;"></i>
+            <i class="fa fa-bars" id="menu-icon" aria-hidden="true" style="font-size:25px;" ></i> <i class="fa fa-times close-icon d-none" aria-hidden="true" style="font-size:25px;"></i>  
       </div>
     </div>
 
@@ -395,12 +466,42 @@ else
      
     <div class=" d-flex justify-content-center align-items-center text-light  p-2" >Header</div>
 
-    <div class="header-pic mt-5" >
-      <img id="blah" src="../assets/img/hero-bg.jpg?v=<?php echo $time; ?>" alt="your image">
-    </div>
+    <!-- Pc and Mobile Image -->
 
-     <label  class="change-img-btn d-flex justify-content-center align-items-center" for="imgInp">Change image 1920 x 1280</label>
-     <input name="header-image" value="C:\xampp\htdocs\Deepak portfolio\assets\img\hero-bg.jpg" accept="image/*" class="d-none" type='file' id="imgInp">
+    <div class="p-2 h-25 mt-5 w-100 bg-dark d-flex justify-content-around align-items-center text-light" style="font-size:12px;font-weight:bold;">
+         <div><?php echo $country; ?></div> <div><?php echo $region; ?></div> <div><?php echo $city; ?></div> <div><?php echo $date->format('d M Y  '); ?></div> <div>More <i class="fa fa-info-circle" aria-hidden="true"></i></div>
+    </div>
+    
+
+<div class="tab-content " id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="header-pic mt-3" >
+          <img id="blah" src="../assets/img/hero-bg.jpg?v=<?php echo time(); ?>" alt="your image">
+        </div>
+        <label  class="change-img-btn d-flex justify-content-center align-items-center" for="imgInp">Change image 1920 x 1280</label>
+        <input name="header-image" value="C:\xampp\htdocs\Deepak portfolio\assets\img\hero-bg.jpg" accept="image/*" class="d-none" type='file' id="imgInp">
+  </div>
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div class="header-pic-mobile mt-5 d-flex justify-content-center align-items-center " >
+          <img id="blah_mobile_btn" height="255px" width="100px" src="../assets/img/mobile.jpg?v=<?php echo time(); ?>" alt="your image">
+        </div>
+     <div class="w-100 d-flex justify-content-center align-items-center" >
+        <label  class="change_img_mobile d-flex justify-content-center align-items-center" for="imgInp_mobile">Change image 719 x 1280</label>
+        <input name="header-image-mobile" value="C:\xampp\htdocs\Deepak portfolio\assets\img\mobile.jpg" accept="image/*" class="d-none" type='file' id="imgInp_mobile">
+      </div>
+  </div>
+</div>
+
+<ul class="nav nav-pills mb-3 mt-2" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Desktop</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Mobile</button>
+  </li>
+</ul>
+
      
      <label  class="text-light" for="name">Change Name</label><br>
      <input name="header-name" value="<?php echo $header_name; ?>" type="text" id="name"><br><br>
@@ -791,20 +892,26 @@ else
         </select>
         <input name="e_url_input" value="<?php echo $url_e; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
-
-
       </div>
 
+    <div class="progress_con d-none p-5 d-flex justify-content-center align-content-center ">
+       <div class="progress-center d-flex justify-content-center align-items-center ">
+
+         <div class= "mt-3" style="width:90%;height:25px; background:#E7E7E7; border-radius:5px;">
+            <div class="form-progress-bar h-100 " style="width:0%;border-radius:5px;">
+              <span class="form-progress-percentage bg-success h-100 d-flex justify-content-center align-content-center font-weight-bold text-light">
+                0%
+              </span>
+            </div>
+          </div>
+
+       </div>
+    </div>
 
     <div class="m-3 mb-4 d-flex justify-content-center align-items-center">
       <input class="submit" style="border:0px; box-shadow: 0px 1px 18px 2px rgba(0,0,0,0.75);" type="submit" value="Update">
-    </div>
-    
-    <div class="form-progress-bar d-none h-100 " style="width:0%;border-radius:5px;">
-      <span class="form-progress-percentage bg-success h-100 d-flex justify-content-center align-content-center font-weight-bold text-light">
-        0%
-      </span>
-    </div>
+    </div> 
+
 </form>
     
 
@@ -831,7 +938,7 @@ else
 
 <script>
 
-// Header picture change //
+// Header picture Desktop //
 imgInp.onchange = evt => {
   const [file] = imgInp.files
   if (file) {
@@ -856,6 +963,34 @@ imgInp.onchange = evt => {
 
       
  
+    }
+ 
+  }
+}
+
+// Header picture Mobile //
+imgInp_mobile.onchange = evt => {
+  const [file] = imgInp_mobile.files
+  if (file) {
+   var url = URL.createObjectURL(file);
+
+   var image = new Image();
+    image.src = url;
+    image.onload = function(){
+      var o_width =  image.width;
+      var o_height = image.height;
+
+      var img_name = image.name;
+
+      if(o_width == 719 && o_height == 1280)
+      {
+        blah_mobile_btn.src = URL.createObjectURL(file);
+      }
+
+      else{
+        alert("Image Size 719 x 1280"); 
+      }
+
     }
  
   }
@@ -940,10 +1075,6 @@ $(document).ready(function(){
 
    });
 });
-
- 
-
-
 // about picture change //
  
 

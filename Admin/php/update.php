@@ -9,6 +9,9 @@
     $header_img =  $_FILES["header-image"];
     $header_img_location = $header_img["tmp_name"];
 
+    $header_img_mobile =  $_FILES["header-image-mobile"];
+    $header_img_mobile_loca = $header_img_mobile["tmp_name"];
+
     $cv_name =  $_POST["cv_resume_name"];
 
     $cv_file =  $_FILES["cv_resume_file"];
@@ -18,12 +21,10 @@
     $header_name = $_POST["header-name"];
     $i_am = $_POST["i-am"];
 
-    echo $cv_name."////////////////////////";
-    echo $cv_location."////////////////////////";
+    $reaponse;
+   
+    
 
- 
- 
- 
  // About Details
     $profile_img =  $_FILES["profile-img"];
      $profile_img_location = $profile_img["tmp_name"];
@@ -108,13 +109,13 @@
 
    
   // Resume
-    $Resume_btn = $_POST["Resume-btn"];
+   // $Resume_btn = $_POST["Resume-btn"];
   // Portfolio
-    $Portfolio_btn = $_POST["Portfolio-btn"];
+   // $Portfolio_btn = $_POST["Portfolio-btn"];
   // Services
-    $Services_btn = $_POST["Services-btn"];
+   // $Services_btn = $_POST["Services-btn"];
   // Testimonials
-    $Testimonials_btn = $_POST["Testimonials-btn"];
+   // $Testimonials_btn = $_POST["Testimonials-btn"];
 
   // Contact
     //$Contact_btn = $_POST["Contact-btn"];
@@ -151,22 +152,39 @@
 
     $CV_upload_location ="assets/img/resume-cv.pdf";
 
-// Header Img Update
+// Header Img desktop 
   if($header_img_location != ""){
       list($header_img_width, $header_img_height) = getimagesize($header_img_location);
 
       if($header_img_width == 1920 && $header_img_height == 1280){
          if(move_uploaded_file($header_img_location,"../../assets/img/hero-bg.jpg"))
          {
-         echo "Header Update ";
+         $reaponse = "Header Update ";
          }
    
          else{
-         echo "header img not updated ";
+         $reaponse = "header img not updated ";
          }
    
       }
   }
+
+    // Header Img Mobile 
+    if($header_img_mobile_loca != ""){
+      list($header_img_width_mob, $header_img_height_mob) = getimagesize($header_img_mobile_loca);
+   
+      if($header_img_width_mob == 719 && $header_img_height_mob == 1280){
+         if(move_uploaded_file($header_img_mobile_loca,"../../assets/img/mobile.jpg"))
+         {
+         $reaponse = "Header Update ";
+         }
+   
+         else{
+         $reaponse = "header img not updated ";
+         }
+   
+      }
+   }
 
   if($profile_img_location != ""){
        list($profile_img_width, $profile_img_height) = getimagesize($profile_img_location);
@@ -174,11 +192,11 @@
    if($profile_img_width == 600 && $profile_img_height == 600){
       if(move_uploaded_file($profile_img_location,"../../assets/img/profile-img.jpg"))
       {
-         echo "profile Update ";
+         $reaponse = "profile Update ";
       }
 
       else{
-         echo "profile img not updated ";
+         $reaponse = "profile img not updated ";
       }
    }
   }
@@ -189,11 +207,11 @@
 
     if($db->query($update_status) == true)
     {
-       echo "Header Name Update Success ";
+       $reaponse = "Header Name Update Success ";
     }
 
     else{
-            echo "Header Name Not Update ";
+            $reaponse = "Header Name Not Update ";
          }
 
    
@@ -203,11 +221,11 @@
 
    if($db->query($i_am_update) == true)
    {
-      echo "am i Update Success ";
+      $reaponse = "am i Update Success ";
    }
 
    else{
-            echo "am i Not Update ";
+            $reaponse = "am i Not Update ";
          }
 
 
@@ -218,11 +236,11 @@
          {
             if(move_uploaded_file($cv_location,"../../assets/img/resume-cv.pdf"))
             {
-               echo "profile Update ";
+               $reaponse = "profile Update ";
             }
       
             else{
-               echo "profile img not updated ";
+               $reaponse = "profile img not updated ";
             }
          }
  
@@ -233,7 +251,7 @@ $about_status = "UPDATE about SET img ='$profile_img_upload_location', About_as=
 
 if($db->query($about_status) == true)
 {
-   echo "about update Success ";
+   $reaponse = "about update Success ";
 
 }
  
@@ -241,62 +259,62 @@ if($db->query($about_status) == true)
 $Facts_As = "UPDATE facts SET Facts_As ='$Facts_as'";
 if($db->query($Facts_As) == true)
 {
-   echo "Facts_As Update ";
+   $reaponse = "Facts_As Update ";
 
 }
 
 $Happy_clients = "UPDATE facts SET happy_clients_no ='$Happy_clients_no'";
 if($db->query($Happy_clients) == true)
 {
-   echo "Happy clients Update ";
+   $reaponse = "Happy clients Update ";
 
 }
 
 $Happy_clients_text = "UPDATE facts SET happy_clients_text ='$Happy_clients_text'";
 if($db->query($Happy_clients_text) == true)
 {
-  echo "Happy clients text Update ";
+  $reaponse = "Happy clients text Update ";
 }
 
 $Projects_no = "UPDATE facts SET projects_no ='$Projects_no'";
 if($db->query($Projects_no) == true)
 {
-   echo "Projects clients no ";
+   $reaponse = "Projects clients no ";
 
 }
 
 $Projects_text = "UPDATE facts SET projects_text ='$Projects_text'";
 if($db->query($Projects_text) == true)
 {
-   echo "Projects clients no ";
+   $reaponse = "Projects clients no ";
 
 }
 
 $Hours_support = "UPDATE facts SET hours_support_no ='$Hours_support_no'";
 if($db->query($Hours_support) == true)
 {
-   echo "Hours support Update ";
+   $reaponse = "Hours support Update ";
 
 }
 
 $Hours_support_text = "UPDATE facts SET hours_support_text ='$Hours_support_text'";
 if($db->query($Hours_support_text) == true)
 {
-   echo "Hours support no Update ";
+   $reaponse = "Hours support no Update ";
 
 }
 
 $Hard_workers = "UPDATE facts SET hard_workers_no ='$Hard_workers_no'";
 if($db->query($Hard_workers) == true)
 {
-   echo "Hard workers Update ";
+   $reaponse = "Hard workers Update ";
 
 }
 
 $Hard_workers_text = "UPDATE facts SET hard_workers_text ='$Hard_workers_text'";
 if($db->query($Hard_workers_text) == true)
 {
-   echo "Hard workers text Update ";
+   $reaponse = "Hard workers text Update ";
 
 }
  
@@ -306,7 +324,7 @@ if($Facts_btn != ""){
    $Facts_btn_status = "UPDATE facts SET on_off ='checked', display=''";
    if($db->query($Facts_btn_status) == true)
    {
-      echo "about btn on ";
+      $reaponse = "about btn on ";
    
    }
 
@@ -317,7 +335,7 @@ else{
    $Facts_btn_status = "UPDATE facts SET on_off ='', display='d-none'";
    if($db->query($Facts_btn_status) == true)
    {
-      echo "about btn off ";
+      $reaponse = "about btn off ";
    
    }
 
@@ -327,14 +345,14 @@ else{
 $Skill_As = "UPDATE skills SET skill_as='$Skills_as', skill_a='$skill_a', skill_b='$skill_b', skill_c='$skill_c', skill_d='$skill_d', skill_e='$skill_e', skill_f='$skill_f', skill_g='$skill_g', skill_h='$skill_h', skill_i='$skill_i', skill_j='$skill_j' WHERE 1";
 if($db->query($Skill_As) == true)
 {
-   echo "Skill Update ";
+   $reaponse = "Skill Update ";
 
 }
 
 $skill_pct = "UPDATE skills SET pct_a='$skill_ap', pct_b='$skill_bp', pct_c='$skill_cp', pct_d='$skill_dp', pct_e='$skill_ep', pct_f='$skill_fp', pct_g='$skill_gp', pct_h='$skill_hp', pct_i='$skill_ip', pct_j='$skill_jp'";
 if($db->query($skill_pct) == true)
 {
-   echo "pct Update ";
+   $reaponse = "pct Update ";
 
 }
 
@@ -343,7 +361,7 @@ if($skill_btn_a != ""){
    $skill_btn_a_status = "UPDATE skills SET  btn_a ='checked', dispaly_a ='' ";
    if($db->query($skill_btn_a_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -352,7 +370,7 @@ else{
    $skill_btn_a_status = "UPDATE skills SET  btn_a ='', dispaly_a ='d-none' ";
    if($db->query($skill_btn_a_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -362,7 +380,7 @@ if($skill_btn_b != ""){
    $skill_btn_b_status = "UPDATE skills SET  btn_b ='checked', dispaly_b ='' ";
    if($db->query($skill_btn_b_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -371,7 +389,7 @@ else{
    $skill_btn_b_status = "UPDATE skills SET  btn_b ='', dispaly_b ='d-none' ";
    if($db->query($skill_btn_b_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -381,7 +399,7 @@ if($skill_btn_c != ""){
    $skill_btn_c_status = "UPDATE skills SET  btn_c ='checked', dispaly_c ='' ";
    if($db->query($skill_btn_c_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -390,7 +408,7 @@ else{
    $skill_btn_c_status = "UPDATE skills SET  btn_c ='', dispaly_c ='d-none' ";
    if($db->query($skill_btn_c_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -400,7 +418,7 @@ if($skill_btn_d != ""){
    $skill_btn_d_status = "UPDATE skills SET  btn_d ='checked', dispaly_d ='' ";
    if($db->query($skill_btn_d_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -409,7 +427,7 @@ else{
    $skill_btn_d_status = "UPDATE skills SET  btn_d ='', dispaly_d ='d-none' ";
    if($db->query($skill_btn_d_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -419,7 +437,7 @@ if($skill_btn_e != ""){
    $skill_btn_e_status = "UPDATE skills SET  btn_e ='checked', dispaly_e ='' ";
    if($db->query($skill_btn_e_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -428,7 +446,7 @@ else{
    $skill_btn_e_status = "UPDATE skills SET  btn_e ='', dispaly_e ='d-none' ";
    if($db->query($skill_btn_e_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -438,7 +456,7 @@ if($skill_btn_f != ""){
    $skill_btn_f_status = "UPDATE skills SET  btn_f ='checked', dispaly_f ='' ";
    if($db->query($skill_btn_f_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -447,7 +465,7 @@ else{
    $skill_btn_f_status = "UPDATE skills SET  btn_f ='', dispaly_f ='d-none' ";
    if($db->query($skill_btn_f_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -457,7 +475,7 @@ if($skill_btn_g != ""){
    $skill_btn_g_status = "UPDATE skills SET  btn_g ='checked', dispaly_g ='' ";
    if($db->query($skill_btn_g_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -466,7 +484,7 @@ else{
    $skill_btn_g_status = "UPDATE skills SET  btn_g ='', dispaly_g ='d-none' ";
    if($db->query($skill_btn_g_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -476,7 +494,7 @@ if($skill_btn_h != ""){
    $skill_btn_h_status = "UPDATE skills SET  btn_h ='checked', dispaly_h ='' ";
    if($db->query($skill_btn_h_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -485,7 +503,7 @@ else{
    $skill_btn_h_status = "UPDATE skills SET  btn_h ='', dispaly_h ='d-none' ";
    if($db->query($skill_btn_h_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -495,7 +513,7 @@ if($skill_btn_i != ""){
    $skill_btn_i_status = "UPDATE skills SET  btn_i ='checked', dispaly_i ='' ";
    if($db->query($skill_btn_i_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -504,7 +522,7 @@ else{
    $skill_btn_i_status = "UPDATE skills SET  btn_i ='', dispaly_i ='d-none' ";
    if($db->query($skill_btn_i_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
@@ -514,7 +532,7 @@ if($skill_btn_j != ""){
    $skill_btn_j_status = "UPDATE skills SET  btn_j ='checked', dispaly_j ='' ";
    if($db->query($skill_btn_j_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    }
 }
@@ -523,20 +541,20 @@ else{
    $skill_btn_j_status = "UPDATE skills SET  btn_j ='', dispaly_j ='d-none' ";
    if($db->query($skill_btn_j_status) == true)
    {
-      echo "skill btn on ";
+      $reaponse = "skill btn on ";
    
    } 
 }
 
 
 
-// Resume Update
+/* Resume Update
 if($Resume_btn != ""){
 
    $Resume_btn_status = "UPDATE resume SET on_off='checked', display=''";
    if($db->query($Resume_btn_status) == true)
    {
-      echo "Resume btn on ";
+      $reaponse = "Resume btn on ";
    }
 
 }
@@ -546,7 +564,7 @@ else{
    $Resume_btn_status = "UPDATE resume SET on_off ='', display='d-none'";
    if($db->query($Resume_btn_status) == true)
    {
-      echo "Resume btn off ";
+      $reaponse = "Resume btn off ";
    }
 
 }
@@ -557,7 +575,7 @@ if($Portfolio_btn != ""){
    $Portfolio_btn_status = "UPDATE portfolio SET on_off='checked', display=''";
    if($db->query($Portfolio_btn_status) == true)
    {
-      echo "Portfolio btn on ";
+      $reaponse = "Portfolio btn on ";
    }
 }
 
@@ -565,7 +583,7 @@ else{
    $Portfolio_btn_status = "UPDATE portfolio SET on_off ='', display='d-none'";
    if($db->query($Portfolio_btn_status) == true)
    {
-      echo "Portfolio btn off ";
+      $reaponse = "Portfolio btn off ";
    }
 }
 
@@ -574,7 +592,7 @@ if($Services_btn != ""){
    $Services_btn_status = "UPDATE Services SET on_off='checked', display=''";
    if($db->query($Services_btn_status) == true)
    {
-      echo "Services btn on ";
+      $reaponse = "Services btn on ";
    }
 }
 
@@ -582,7 +600,7 @@ else{
    $Services_btn_status = "UPDATE Services SET on_off ='', display='d-none'";
    if($db->query($Services_btn_status) == true)
    {
-      echo "Services btn off ";
+      $reaponse = "Services btn off ";
    }
 }
 
@@ -591,7 +609,7 @@ if($Testimonials_btn != ""){
    $Testimonials_btn_status = "UPDATE testimonials SET on_off='checked', display=''";
    if($db->query($Testimonials_btn_status) == true)
    {
-      echo "Testimonials btn on ";
+      $reaponse = "Testimonials btn on ";
    }
 }
 
@@ -599,36 +617,38 @@ else{
    $Testimonials_btn_status = "UPDATE testimonials SET on_off ='', display='d-none'";
    if($db->query($Testimonials_btn_status) == true)
    {
-      echo "Testimonials btn off ";
+      $reaponse = "Testimonials btn off ";
    }
 }
+
+*/
 
 // Contact Update
  $Contact_As = "UPDATE contact SET contact_as ='$Contact_as'";
    if($db->query($Contact_As) == true)
    {
-      echo "Contact_As Update ";
+      $reaponse = "Contact_As Update ";
 
    }
 
    $location = "UPDATE contact SET location ='$Location'";
    if($db->query($location) == true)
    {
-      echo "location Update ";
+      $reaponse = "location Update ";
 
    }
 
    $Contact_Email = "UPDATE contact SET Email ='$Contact_Email'";
    if($db->query($Contact_Email) == true)
    {
-      echo "Email Update ";
+      $reaponse = "Email Update ";
 
    }
 
    $Call = "UPDATE contact SET Call_No ='$Call'";
    if($db->query($Call) == true)
    {
-      echo "Call Update ";
+      $reaponse = "Call Update ";
 
    }
 
@@ -636,7 +656,7 @@ else{
    $Contact_btn_status = "UPDATE contact SET on_off='checked', display=''";
    if($db->query($Contact_btn_status) == true)
    {
-      echo "Contact btn on ";
+      $reaponse = "Contact btn on ";
    }
 }
 
@@ -644,7 +664,7 @@ else{
    $Contact_btn_status = "UPDATE contact SET on_off ='', display='d-none'";
    if($db->query($Contact_btn_status) == true)
    {
-      echo "Contact btn off ";
+      $reaponse = "Contact btn off ";
    }
 }  */
 
@@ -656,7 +676,7 @@ if($db->query($Select_a) == true)
    $url_a = "UPDATE social_media SET url_a ='$a_url'";
    if($db->query($url_a) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "Select url Update";
    }  
 
 }
@@ -667,7 +687,7 @@ if($db->query($Select_b) == true)
    $url_b = "UPDATE social_media SET url_b ='$b_url'";
    if($db->query($url_b) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "Select url Update";
    }  
 
 }
@@ -678,7 +698,7 @@ if($db->query($Select_c) == true)
    $url_c = "UPDATE social_media SET url_c ='$c_url'";
    if($db->query($url_c) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "Select url Update";
    }  
 
 }
@@ -689,7 +709,7 @@ if($db->query($Select_d) == true)
    $url_d = "UPDATE social_media SET url_d ='$d_url'";
    if($db->query($url_d) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "Select url Update";
    }  
 
 }
@@ -700,7 +720,7 @@ if($db->query($Select_e) == true)
    $url_e = "UPDATE social_media SET url_e ='$e_url'";
    if($db->query($url_e) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "Select url Update";
    }  
 
 }
@@ -708,8 +728,10 @@ if($db->query($Select_e) == true)
 $checked_a = "UPDATE social_media SET checked_a ='yes'";
    if($db->query($checked_a) == true)
    {      
-     echo "Select url Update";
+     $reaponse = "success";
    }  
  } 
+
+ echo $reaponse;
   
 ?>
