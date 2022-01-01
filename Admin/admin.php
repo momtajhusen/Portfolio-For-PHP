@@ -253,6 +253,10 @@ else
         border-radius:10px;
       }
 
+      a{
+        text-decoration: none;
+      }
+
 
    </style>
 
@@ -271,9 +275,9 @@ else
       <i class="fa fa-unlock-alt mt-2" style="font-size:21px;" aria-hidden="true"></i> Change Password 
       </div>
 
-      <div class="w-100 text-light p-3" style="background:#000232">
+      <a href="visitor_check.php"><div class="w-100 text-light p-3" style="background:#000232">
         <i class="fa fa-users ml-3" aria-hidden="true"></i>  Visitor Analytics
-      </div>
+      </div></a>
 
       <div class="w-100 text-light p-3" style="background:#0D0C4A">
       <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
@@ -426,28 +430,7 @@ else
                     $url_d  =  $social_media_data['url_d'];
                     $url_e  =  $social_media_data['url_e'];
     ?>
-
-    <?php 
-      // Header Details Reteive
-      $query = "SELECT * FROM visitor"; 
-      $query_response = $db->query($query);
-      $visitor_data = $query_response->fetch_assoc();
-
-      $country  =  $visitor_data['country'];
-      $region  =  $visitor_data['region'];
-      $city  =  $visitor_data['city'];
-      $os  =  $visitor_data['os'];
-      $browser  =  $visitor_data['browser'];
  
-
-       $date = new DateTime($visitor_data['time']);
- 
-
-    // $date = date('h:i:s A');
-
-     
-    ?>
-
     <div class="header pl-4 d-flex">
       <div class="w-75 pl-5 h-100 d-flex justify-content-center align-items-center animate__animated animate__backInDown" style="font-size:20px; font-family: 'Anton', sans-serif;   letter-spacing: 2px;">
         <?php echo $header_name; ?>
@@ -469,7 +452,7 @@ else
     <!-- Pc and Mobile Image -->
 
     <div class="p-2 h-25 mt-5 w-100 bg-dark d-flex justify-content-around align-items-center text-light" style="font-size:12px;font-weight:bold;">
-         <div><?php echo $country; ?></div> <div><?php echo $region; ?></div> <div><?php echo $city; ?></div> <div><?php echo $date->format('d M Y  '); ?></div> <div>More <i class="fa fa-info-circle" aria-hidden="true"></i></div>
+         Visitor Info
     </div>
     
 

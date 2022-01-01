@@ -31,7 +31,7 @@
         
         success : function(response){
            
-          alert(response);
+          alert("Update Success");
 
           if(response.trim() == "Select url Update"){
             setTimeout(function(){ 
