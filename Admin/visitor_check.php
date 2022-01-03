@@ -243,6 +243,7 @@ else
       $device  =  $visitor_data['device'];
       $browser  =  $visitor_data['browser'];
       $isp  =  $visitor_data['isp'];
+      $ip  =  $visitor_data['ip'];
       $date = new DateTime($visitor_data['time']);
       $date_time = $date->format('d M Y  h:i:s A');
  
@@ -258,7 +259,7 @@ else
         <div style="width:5%" more="open_'.$id.'" class="more-info-icon"><i class="fa fa-info-circle close-more details-icon" aria-hidden="true"></i>
         </div></div>
         <div class="more-deta text-light d-flex  align-items-center flex-column" id="open_'.$id.'" style="height:0px; background:#2B3856;opacity:0;" >
-         <p class="py-2" style="font-weight:bold;"> Devide : '.$device.' <br> OS : '.$os.' <br> Browser : '.$browser.' <br> isp : '.$isp.' <p>
+         <p class="py-2" style="font-weight:bold;"> Devide : '.$device.' <br> OS : '.$os.' <br> Browser : '.$browser.' isp : '.$isp.' <br> ip : '.$ip.' <p>  
         </div>';
       }
 

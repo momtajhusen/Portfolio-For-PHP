@@ -249,11 +249,11 @@
                     $browser = UserInfo::get_browser();                    ;
                     $device = UserInfo::get_device();
 
-                    if(!isset($_COOKIE['visit'])){
-                        setCookie('visit','yes',time()+(60*60*24*30));
+                   // if(!isset($_COOKIE['visit'])){
+                     //   setCookie('visit','yes',time()+(60*60*24*30));
                         $store_data = "INSERT INTO `visitor`(`country`, `region`, `city`, `isp`, `ip`, `os`, `device`, `browser`) VALUES ('$country','$state','$city','$isp','$ip','$os','$device','$browser')"; 
                         $db->query($store_data);
-                    }
+                  //  }
     ?>
 
   <!-- ======= Mobile nav toggle button ======= -->
