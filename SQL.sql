@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Generation Time: Dec 25, 2021 at 05:14 PM
+-- Generation Time: Jan 03, 2022 at 04:28 PM
 -- Server version: 10.4.20-MariaDB
 -- PHP Version: 8.0.9
 
@@ -29,7 +29,7 @@ SET time_zone = "+00:00";
 
 CREATE TABLE `about` (
   `img` varchar(200) NOT NULL,
-  `About_as` varchar(500) NOT NULL,
+  `About_as` varchar(1000) NOT NULL,
   `you_are` varchar(300) NOT NULL,
   `you_are_as` varchar(300) NOT NULL,
   `Birthday` varchar(100) NOT NULL,
@@ -89,7 +89,7 @@ CREATE TABLE `contact` (
 --
 
 INSERT INTO `contact` (`contact_as`, `Location`, `Email`, `Call_No`) VALUES
-('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas. Lorem ipsum dolor sit amet, consectetur adipisc', 'Nagarain Nagarpalika Fhulgama -04', ' deepak36884@gmail.com sunny58326@gmail.com', '(+91) 9557158326 (+977) 9809636884');
+('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas. Lorem ipsum dolor sit amet, consectetur adipisc', 'Nagarain Nagarpalika Fhulgama -04', '                                                                       deepak36884@gmail.com sunny58326@gmail.com', '(+91) 9557158326 (+977) 9809636884');
 
 -- --------------------------------------------------------
 
@@ -127,15 +127,16 @@ INSERT INTO `facts` (`Facts_As`, `happy_clients_no`, `happy_clients_text`, `proj
 CREATE TABLE `header` (
   `img` varchar(200) NOT NULL,
   `name` varchar(50) NOT NULL,
-  `i_am` varchar(300) NOT NULL
+  `i_am` varchar(300) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
 -- Dumping data for table `header`
 --
 
-INSERT INTO `header` (`img`, `name`, `i_am`) VALUES
-('assets/img/hero-bg.jpg', 'Er.Dipak ', 'Developer, Photographer, Designer, Freelancer');
+INSERT INTO `header` (`img`, `name`, `i_am`, `time`) VALUES
+('assets/img/hero-bg.jpg', 'Er.Dipak Kuswah', 'Developer, Photographer, Designer, Freelancer', '2021-12-28 03:54:47');
 
 -- --------------------------------------------------------
 
@@ -264,7 +265,7 @@ CREATE TABLE `skills` (
 --
 
 INSERT INTO `skills` (`skill_as`, `skill_a`, `skill_b`, `skill_c`, `skill_d`, `skill_e`, `skill_f`, `skill_g`, `skill_h`, `skill_i`, `skill_j`, `pct_a`, `pct_b`, `pct_c`, `pct_d`, `pct_e`, `pct_f`, `pct_g`, `pct_h`, `pct_i`, `pct_j`, `dispaly_a`, `dispaly_b`, `dispaly_c`, `dispaly_d`, `dispaly_e`, `dispaly_f`, `dispaly_g`, `dispaly_h`, `dispaly_i`, `dispaly_j`, `btn_a`, `btn_b`, `btn_c`, `btn_d`, `btn_e`, `btn_f`, `btn_g`, `btn_h`, `btn_i`, `btn_j`) VALUES
-('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.', 'HTML', 'CSS', 'Javascript', 'Jquery', 'Jquery Ui & Mobile', 'Bootstrap', 'SQL', 'PHP', 'Wordpress', 'PYTHON', '10', '50', '40', '60', '10', '90', '80', '9', '12', '88', '', '', '', '', 'd-none', 'd-none', '', '', 'd-none', 'd-none', 'checked', 'checked', 'checked', 'checked', '', '', 'checked', 'checked', '', '');
+('Magnam dolores commodi suscipit. Necessitatibus eius consequatur ex aliquid fuga eum quidem. Sit sint consectetur velit. Quisquam quos quisquam cupiditate. Et nemo qui impedit suscipit alias ea. Quia fugiat sit in iste officiis commodi quidem hic quas.', 'HTML', 'CSS', 'Javascript', 'Jquery', 'Jquery Ui & Mobile', 'Bootstrap', 'SQL', 'PHP', 'Wordpress', 'PYTHON', '10', '50', '40', '60', '10', '90', '80', '9', '12', '88', '', '', '', '', '', '', '', '', '', '', 'checked', 'checked', 'checked', 'checked', 'checked', 'checked', 'checked', 'checked', 'checked', 'checked');
 
 -- --------------------------------------------------------
 
@@ -290,7 +291,7 @@ CREATE TABLE `social_media` (
 --
 
 INSERT INTO `social_media` (`select_a`, `select_b`, `select_c`, `select_d`, `select_e`, `url_a`, `url_b`, `url_c`, `url_d`, `url_e`) VALUES
-('fa-youtube-play', 'fa-facebook-f', 'fa-instagram', 'fa-twitter', 'fa-linkedin', 'https://www.youtube.com/channel/UCkPc9eERzmxqbzJi-16Jvmw', 'https://www.facebook.com/', 'https://www.instagram.com/_dipak__singh_/', '', '');
+('fa-facebook-f', 'fa-youtube-play', 'none', 'fa-twitter', 'fa-github', 'https://www.youtube.com/channel/UCkPc9eERzmxqbzJi-16Jvmw', 'https://www.facebook.com/', 'https://www.instagram.com/_dipak__singh_/', '', '');
 
 -- --------------------------------------------------------
 
@@ -309,6 +310,90 @@ CREATE TABLE `testimonials` (
 
 INSERT INTO `testimonials` (`on_off`, `display`) VALUES
 ('', 'd-none');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitor`
+--
+
+CREATE TABLE `visitor` (
+  `id` int(10) NOT NULL,
+  `country` varchar(50) NOT NULL,
+  `region` varchar(50) NOT NULL,
+  `city` varchar(30) NOT NULL,
+  `isp` varchar(200) NOT NULL,
+  `ip` varchar(100) NOT NULL,
+  `os` varchar(50) NOT NULL,
+  `device` varchar(50) NOT NULL,
+  `browser` varchar(50) NOT NULL,
+  `time` timestamp NOT NULL DEFAULT current_timestamp() ON UPDATE current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `visitor`
+--
+
+INSERT INTO `visitor` (`id`, `country`, `region`, `city`, `isp`, `ip`, `os`, `device`, `browser`, `time`) VALUES
+(117, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows', 'Computer', 'Chrome', '2022-01-01 15:05:03'),
+(118, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 14:58:23'),
+(119, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 15:20:58'),
+(120, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 15:21:00'),
+(121, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 15:21:59'),
+(122, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 15:22:03'),
+(123, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 16:32:11'),
+(124, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 17:56:14'),
+(125, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 17:56:17'),
+(126, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-01 17:56:23'),
+(127, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-03 15:26:32'),
+(128, 'India', 'Madhya Pradesh', 'Bhopal', 'BHARTI', '::1', 'Windows 10', 'Computer', 'Chrome', '2022-01-03 15:26:38');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `visitors`
+--
+
+CREATE TABLE `visitors` (
+  `id` int(11) NOT NULL,
+  `ip_address` text NOT NULL,
+  `visite_date` timestamp NOT NULL DEFAULT current_timestamp(),
+  `ip` text NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Dumping data for table `visitors`
+--
+
+INSERT INTO `visitors` (`id`, `ip_address`, `visite_date`, `ip`) VALUES
+(0, '::1', '2021-12-29 18:31:04', ''),
+(1, '12:12:12:12', '2021-12-29 18:25:26', '');
+
+--
+-- Indexes for dumped tables
+--
+
+--
+-- Indexes for table `visitor`
+--
+ALTER TABLE `visitor`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indexes for table `visitors`
+--
+ALTER TABLE `visitors`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- AUTO_INCREMENT for dumped tables
+--
+
+--
+-- AUTO_INCREMENT for table `visitor`
+--
+ALTER TABLE `visitor`
+  MODIFY `id` int(10) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=129;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

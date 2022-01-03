@@ -81,6 +81,7 @@
 <body>
 <?php 
         require("Admin/php/database.php");
+        include('UserInformation.php');
 
                   // Header Details Reteive
                         $header = "SELECT * FROM header  LIMIT 1"; 
@@ -229,6 +230,30 @@
                     $Url_c  =  $Social_media_data['url_c'];
                     $Url_d  =  $Social_media_data['url_d'];
                     $Url_e  =  $Social_media_data['url_e'];
+
+                    $ch=curl_init();
+                    curl_setopt($ch,CURLOPT_URL,"http://ip-api.com/json");
+                    curl_setopt($ch,CURLOPT_RETURNTRANSFER,1);
+                    $result=curl_exec($ch);
+                    $result=json_decode($result);
+
+                    if($result->status=='success'){
+                       $country = $result->country;
+                       $state = $result->regionName;
+                       $city = $result->city;
+                       $isp = $result->isp;
+                    }
+
+                    $ip = UserInfo::get_ip();
+                    $os = UserInfo::get_os();
+                    $browser = UserInfo::get_browser();                    ;
+                    $device = UserInfo::get_device();
+
+                   // if(!isset($_COOKIE['visit'])){
+                     //   setCookie('visit','yes',time()+(60*60*24*30));
+                        $store_data = "INSERT INTO `visitor`(`country`, `region`, `city`, `isp`, `ip`, `os`, `device`, `browser`) VALUES ('$country','$state','$city','$isp','$ip','$os','$device','$browser')"; 
+                        $db->query($store_data);
+                  //  }
     ?>
 
   <!-- ======= Mobile nav toggle button ======= -->

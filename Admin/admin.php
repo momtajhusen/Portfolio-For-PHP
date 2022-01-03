@@ -27,7 +27,11 @@ else
   <!--.................................. CDN ..................................-->
 
 <!-- Bootstrap CSS -->
-<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css">
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
+
 
 <!-- JS, Popper.js, jQuery, Bootstrap.js-->
 <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
@@ -38,13 +42,19 @@ else
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="https://cdn.boomcdn.com/libs/animate-css/3.7.0/animate.css">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
 
 <!-- Other file -->
 <link href="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/css/bootstrap4-toggle.min.css" rel="stylesheet">
 <script src="https://cdn.jsdelivr.net/gh/gitbrent/bootstrap4-toggle@3.6.1/js/bootstrap4-toggle.min.js"></script>
 
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&display=swap" rel="stylesheet">
+
 <script src="ajax/update.js"></script>
+
+
 
 
 
@@ -71,14 +81,33 @@ else
 
        .contener{
            width:400px;
+           box-shadow:0px 0px 5px 3px black;
+           background: #000232;
+           position: relative;
        }
 
       .header{
-          width:100%;
-          height:50px;
-          background: #000;
-          color:white;
+        width:400px;
+        height:70px;
+        color:white;
+        z-index: 1;
+        background-color:#000232;
+        box-shadow: 0 8px 6px -6px black;
+        position: fixed;
+        top: 0;
+        border-bottom-right-radius: 40px;
+        animation: mymove 10s infinite;
       }
+ 
+@keyframes mymove {
+  0%   {background-color:#0D0C4A;}
+  25%  {background-color:#000232;}
+  50%  {background-color:#0D0C4A}
+  75%  {background-color:#000232;}
+  100% {background-color:#0D0C4A}
+}
+
+
 
       .header-pic{
           width:100%;
@@ -88,43 +117,174 @@ else
       .header-pic img{
           width:100%;
           header:50px;
+          border:2px solid red;
+          border:2px dashed #ddd;
+          border-bottom:0px;
+          opacity: 0.5;
+      }
+      
+
+      .header-pic-mobile{
+          width:100%;
+          border:2px solid red;
+          border:2px dashed #ddd;
+          border-bottom:0px;
+          opacity: 0.5;
       }
 
-      .change-img-btn{
+      
+      .header-pic-mobile img{
+          width:45%;
+      }
+ 
+
+ 
+      .change-img-btn,.change_img_mobile{
           width:100%;
-          padding:5px;
+          padding:10px;
           border:none;
           outline:none;
           background: #000;
           color:white;
           border:2px dashed #ddd;
+          border-top:0px;
           opacity: 0.5;
+      }
+
+ 
+
+      form{
+        background: #000232;
+      }
+
+      input{
+        height:40px;
+        outline:none;
+        border:none;
+        padding-left:10px;
+        color:white;
+        border:2px solid #B689B0;
+        background:none;
+      }
+
+      textarea{
+        outline:none;
+        border:none;
+        padding:10px;
+        color:white;
+        border:2px solid #B689B0;
+        background:none;
+        text-align:center;
       }
 
       input,select{
           width:100%;
       }
 
+      select{
+        height:40px;
+        outline:none;
+        border:none;
+        text-align:center;
+        background:#21203b;
+        border:2px solid #B689B0;
+        border-bottom:0px;
+        color:white;
+      }
+
+      select.decorated option:hover {
+    box-shadow: 0 0 10px 100px #1882A8 inset;
+}
+
+      #social-media-input{
+          border-top:0px;
+      }
+
       .skill-input{
         width:80%;
+        border-radius:0px;
       }
 
       .percentage-input{
         width:15%;
-        text-align: center; 
+        border-radius:0px;
+      }
+
+      .percentage{
+        width:10%;
+        border:2px solid #B689B0;
       }
 
       .header-container{
-          border-bottom:4px solid #ddd;
+          border-bottom:0px solid #ddd;
     
       }
- 
+
+      .submit{
+        width:70%;
+        background-color:#090845;
+      }
+     
+      .menu-content{
+        width:350px;
+        height:100vh;
+        position: fixed;
+        background: #030437;
+        top:-100%;
+        z-index: 1;
+        transition: 1s;
+        box-shadow: 0px 8px 6px -6px black;
+      }
+
+      .progress_con{
+        width:100%;
+        border-radius:5px;
+        z-index:1;
+        position:  fixed;
+        top:45%;
+        left:0px;
+      }
+
+      .progress-center{
+        width:350px;
+        height:200px;
+        background:#0D0C4A;
+        box-shadow: 0px 0px 10px 5px black;
+        border-radius:10px;
+      }
+
+      a{
+        text-decoration: none;
+      }
+
+
    </style>
 
 <body   class="d-flex justify-content-center align-items-center bg-dark">
-
 <!-- Container  -->
-<div class="contener" style="border:10px solid black;">
+<div class="contener">
+  <!-- Menu Container profile  -->
+<div class="menu-content pt-5">
+      <div class="w-100 h-25 mt-4 d-flex justify-content-center align-items-center" style="border-bottom: 5px solid #010333;">
+        <div style="  width:130px; height:130px;border-radius:100px;border-bottom: 5px solid #010333;" >
+          <img src="../assets/img/profile-img.jpg?v=<?php echo time(); ?>" class="img-fluid rounded-circle mb-3">
+       </div>
+      </div>
+
+      <div class="w-100 text-light p-3" style="background:#0D0C4A">
+      <i class="fa fa-unlock-alt mt-2" style="font-size:21px;" aria-hidden="true"></i> Change Password 
+      </div>
+
+      <a href="visitor_check.php"><div class="w-100 text-light p-3" style="background:#000232">
+        <i class="fa fa-users ml-3" aria-hidden="true"></i>  Visitor Analytics
+      </div></a>
+
+      <div class="w-100 text-light p-3" style="background:#0D0C4A">
+      <i class="fa fa-sign-out" aria-hidden="true"></i> Logout
+      </div>
+
+  </div>
+
 
 <?php 
         require("php/database.php");
@@ -137,6 +297,7 @@ else
                         $header_img  =  $header_data['img'];
                         $header_name  =  $header_data['name'];
                         $i_am  =  $header_data['i_am'];
+                        $time  =  $header_data['time'];
 
                   // About Details Reteive
                         $about = "SELECT * FROM about  LIMIT 1"; 
@@ -268,31 +429,62 @@ else
                     $url_c  =  $social_media_data['url_c'];
                     $url_d  =  $social_media_data['url_d'];
                     $url_e  =  $social_media_data['url_e'];
-                    
- 
-
-
-
- 
-  
     ?>
-           
-    <div class="header d-flex justify-content-center align-items-center">
+ 
+    <div class="header pl-4 d-flex">
+      <div class="w-75 pl-5 h-100 d-flex justify-content-center align-items-center animate__animated animate__backInDown" style="font-size:20px; font-family: 'Anton', sans-serif;   letter-spacing: 2px;">
         <?php echo $header_name; ?>
+      </div>
+
+      <div class="w-25 h-100 d-flex justify-content-center align-items-center animate__animated animate__jello animate__infinite animate__slower animate__delay-2s ">
+            <i class="fa fa-bars" id="menu-icon" aria-hidden="true" style="font-size:25px;" ></i> <i class="fa fa-times close-icon d-none" aria-hidden="true" style="font-size:25px;"></i>  
+      </div>
     </div>
+
+
     
 <form id="join_form" enctype="multipart/form-data"> 
     <!-- Header  -->
-    <div class="p-2 pb-3 bg-dark header-container" >
+    <div class="p-2 pb-3 header-container" >
      
-    <div class="bg-dark d-flex justify-content-center align-items-center text-light  p-2" >Header</div>
+    <div class=" d-flex justify-content-center align-items-center text-light  p-2" >Header</div>
 
-    <div class="header-pic" >
-      <img id="blah" src="<?php echo '../'.$header_img; ?>" alt="your image">
+    <!-- Pc and Mobile Image -->
+
+    <div class="p-2 h-25 mt-5 w-100 bg-dark d-flex justify-content-around align-items-center text-light" style="font-size:12px;font-weight:bold;">
+         Visitor Info
     </div>
+    
 
-     <label  class="change-img-btn d-flex justify-content-center align-items-center" for="imgInp">Change image 1920 x 1280</label>
-     <input name="header-image" value="C:\xampp\htdocs\Deepak portfolio\assets\img\hero-bg.jpg" accept="image/*" class="d-none" type='file' id="imgInp">
+<div class="tab-content " id="pills-tabContent">
+  <div class="tab-pane fade show active" id="pills-home" role="tabpanel" aria-labelledby="pills-home-tab">
+      <div class="header-pic mt-3" >
+          <img id="blah" src="../assets/img/hero-bg.jpg?v=<?php echo time(); ?>" alt="your image">
+        </div>
+        <label  class="change-img-btn d-flex justify-content-center align-items-center" for="imgInp">Change image 1920 x 1280</label>
+        <input name="header-image" value="C:\xampp\htdocs\Deepak portfolio\assets\img\hero-bg.jpg" accept="image/*" class="d-none" type='file' id="imgInp">
+  </div>
+
+  <div class="tab-pane fade" id="pills-profile" role="tabpanel" aria-labelledby="pills-profile-tab">
+      <div class="header-pic-mobile mt-5 d-flex justify-content-center align-items-center " >
+          <img id="blah_mobile_btn" height="255px" width="100px" src="../assets/img/mobile.jpg?v=<?php echo time(); ?>" alt="your image">
+        </div>
+     <div class="w-100 d-flex justify-content-center align-items-center" >
+        <label  class="change_img_mobile d-flex justify-content-center align-items-center" for="imgInp_mobile">Change image 719 x 1280</label>
+        <input name="header-image-mobile" value="C:\xampp\htdocs\Deepak portfolio\assets\img\mobile.jpg" accept="image/*" class="d-none" type='file' id="imgInp_mobile">
+      </div>
+  </div>
+</div>
+
+<ul class="nav nav-pills mb-3 mt-2" id="pills-tab" role="tablist">
+  <li class="nav-item" role="presentation">
+    <button class="nav-link active" id="pills-home-tab" data-bs-toggle="pill" data-bs-target="#pills-home" type="button" role="tab" aria-controls="pills-home" aria-selected="true">Desktop</button>
+  </li>
+  <li class="nav-item" role="presentation">
+    <button class="nav-link" id="pills-profile-tab" data-bs-toggle="pill" data-bs-target="#pills-profile" type="button" role="tab" aria-controls="pills-profile" aria-selected="false">Mobile</button>
+  </li>
+</ul>
+
      
      <label  class="text-light" for="name">Change Name</label><br>
      <input name="header-name" value="<?php echo $header_name; ?>" type="text" id="name"><br><br>
@@ -307,21 +499,19 @@ else
           <option class="resume_none" value="none">Remove</option>
      </select>
      
-    <input type="file" id="cv_resume_file" name="cv_resume_file" accept=".pdf">
+    <input type="file" class="d-none" id="cv_resume_file" name="cv_resume_file" accept=".pdf">
+    <label  class="change-img-btn d-flex justify-content-center align-items-center" for="cv_resume_file">Upload </label>
     
 
-
- 
-  
 
     </div>
 
     <!-- About  -->
-    <div class="p-2 bg-dark header-container" >
-      <div class="bg-dark d-flex justify-content-center align-items-center text-light  p-2" >About</div>
+    <div class="p-2  header-container" style="background:#0d0c4a" >
+      <div class="d-flex justify-content-center align-items-center text-light  p-2 h4" >About</div>
       
       <div class="header-pic" >
-       <img id="about_img" src="<?php echo '../'.$about_img; ?>" alt="your image">
+       <img id="about_img" src="../assets/img/profile-img.jpg?v=<?php echo time(); ?>" alt="your image">
       </div>
 
       <label  class="change-img-btn d-flex justify-content-center align-items-center" for="about_img_btn">Change image 600 x 600</label>
@@ -373,9 +563,9 @@ else
 
 
         <!-- Facts -->
-    <div class="p-2 bg-dark header-container" >
-    <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-        <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+    <div class="p-2 header-container" >
+    <div class=" text-light d-flex d-flex justify-content-center align-items-center" >
+        <div class="w-75 h-100 pt-3 pl-5 d-flex justify-content-center align-items-center h4" >
           Facts
         </div>
         <div class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -408,8 +598,8 @@ else
 
 
             <!-- Skills -->
-    <div class="p-2 bg-dark header-container" >
-      <div class="bg-dark d-flex justify-content-center align-items-center text-light  p-2" >Skills</div>
+    <div class="p-2 header-container" style="background:#0d0c4a">
+      <div class=" d-flex justify-content-center align-items-center text-light  p-2 h4" >Skills</div>
 
       <label  class="text-light" for="name">Skill As.</label><br>
       <textarea name="Skills_as" class="w-100 mb-2" id="name" cols="10" rows="5"><?php echo $skill_as; ?></textarea>
@@ -422,7 +612,7 @@ else
   
         <input name="skill_a" class="mb-2 skill-input" value="<?php echo $skills_a; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_ap" class="mb-2 percentage-input" type="text" value="<?php echo $pct_a; ?>" id="birthday">
-        <input class="mb-2 mr-1 percentage-input bg-light " disabled type="text" value="%" style='width:7%;'>  
+        <input class="mb-2 mr-1 percentage  border-0 " disabled type="text" value="%"> 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_a" <?php echo $btn_a; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -431,7 +621,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_b" class="mb-2 skill-input" value="<?php echo $skills_b; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_bp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_b; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage  border-0 " disabled type="text" value="%"> 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_b" <?php echo $btn_b; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -441,7 +631,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_c" class="mb-2 skill-input" value="<?php echo $skills_c; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_cp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_c; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage   border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_c" <?php echo $btn_c; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -450,7 +640,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_d" class="mb-2 skill-input" value="<?php echo $skills_d; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_dp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_d; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage   border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_d" <?php echo $btn_d; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -459,7 +649,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_e" class="mb-2 skill-input" value="<?php echo $skills_e; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_ep" class="mb-2 percentage-input" type="text" value="<?php echo $pct_e; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage   border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_e" <?php echo $btn_e; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -468,7 +658,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_f" class="mb-2 skill-input" value="<?php echo $skills_f; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_fp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_f; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage  border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_f" <?php echo $btn_f; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -477,7 +667,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_g" class="mb-2 skill-input" value="<?php echo $skills_g; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_gp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_g; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage   border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_g" <?php echo $btn_g; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -486,7 +676,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_h" class="mb-2 skill-input" value="<?php echo $skills_h; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_hp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_h; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage   border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_h" <?php echo $btn_h; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -495,7 +685,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_i" class="mb-2 skill-input" value="<?php echo $skills_i; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_ip" class="mb-2 percentage-input" type="text" value="<?php echo $pct_i; ?>" id="birthday">
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage  border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_i" <?php echo $btn_i; ?> type="checkbox" data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div> 
@@ -504,7 +694,7 @@ else
       <div class="skill-input-box d-flex">
         <input name="skill_j" class="mb-2 skill-input" value="<?php echo $skills_j; ?>" type="text" placeholder="skill" id="birthday">
         <input name="skill_jp" class="mb-2 percentage-input" type="text" value="<?php echo $pct_j; ?>" id="birthday"> 
-        <input class="mb-2 mr-1 percentage-input bg-light border-0 " disabled type="text" value="%" style='width:7%;'> 
+        <input class="mb-2 mr-1 percentage  border-0 " disabled type="text" value="%" > 
         <div class="w-20 mb-2 h-25 bg-black d-flex d-flex justify-content-center align-items-center ">
           <input name="skill_btn_j" <?php echo $btn_j; ?> type="checkbox"  data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger">
         </div>
@@ -519,13 +709,13 @@ else
 
 
 
+<!--
 
+          -- Resume --
+      <div class="p-2 header-container" >
 
-          <!-- Resume -->
-      <div class="p-2 bg-dark header-container" >
-
-      <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-        <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+      <div class="text-light d-flex d-flex justify-content-center align-items-center" >
+        <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4" >
           Resume
         </div>
         <div class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -534,13 +724,13 @@ else
       </div>
 
       
-      </div>
+      </div>   
 
 
-      <!-- Portfolio -->
-      <div class="p-2 bg-dark header-container" >
-        <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+      -- Portfolio --
+      <div class="p-2 header-container" style="background:#0d0c4a">
+        <div class="text-light d-flex d-flex justify-content-center align-items-center" >
+          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4" >
           Portfolio
           </div>
           <div class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -550,10 +740,10 @@ else
       </div>
 
 
-      <!-- Services -->
-      <div class="p-2 bg-dark header-container" >
-        <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+      -- Services --
+      <div class="p-2 header-container" >
+        <div class="text-light d-flex d-flex justify-content-center align-items-center" >
+          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4" >
           Services
           </div>
           <div class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -563,10 +753,10 @@ else
       </div>
 
 
-      <!-- Testimonials -->
-      <div class="p-2 bg-dark header-container" >
-        <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+      -- Testimonials --
+      <div class="p-2 header-container" style="background:#0d0c4a">
+        <div class="text-light d-flex d-flex justify-content-center align-items-center" >
+          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4" >
           Testimonials
           </div>
           <div  class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -574,12 +764,13 @@ else
           </div>
         </div>
       </div>
-
+  
+      -->
 
       <!-- Contact -->
-      <div class="p-2 bg-dark header-container" >
-        <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center"> Contact</div>
+      <div class="p-2 header-container" >
+        <div class=" text-light d-flex d-flex justify-content-center align-items-center" >
+          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4"> Contact</div>
           <div class="w-25 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
            <!--  <input name="Contact-btn" type="checkbox"  data-toggle="toggle" data-onstyle="outline-success" data-offstyle="outline-danger"> -->
           </div>
@@ -609,9 +800,9 @@ else
 
 
             <!-- Social Media -->
-            <div class="p-2 bg-dark header-container" >
-        <div class="bg-dark text-light d-flex d-flex justify-content-center align-items-center" >
-          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center" >
+            <div class="p-2 header-container" style="background:#0d0c4a; box-shadow: 0 8px 12px -6px black;">
+        <div class="text-light d-flex d-flex justify-content-center align-items-center" >
+          <div class="w-75 h-100 pl-5 d-flex justify-content-center align-items-center h4" >
             Social Media
           </div>
           <div  class="w-25 mb-2 h-100 bg-black d-flex d-flex justify-content-center align-items-center ">
@@ -627,7 +818,7 @@ else
         <span class="e_check_select" val="<?php echo 'e_'.$select_e; ?>"></span>
  
  
-        <select name="a_select" class="a_select" class="mt-2" id="1_select">
+        <select name="a_select" class="a_select decorated" class="mt-2" id="1_select">
           <option class="a_fa-facebook-f"  value="fa-facebook-f"><i class="fa fa-calendar" aria-hidden="true"></i>Facebook</option>
           <option class="a_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="a_fa-instagram" value="fa-instagram">Instagram</option>
@@ -636,21 +827,20 @@ else
           <option class="a_fa-github" value="fa-github">GitHub</option>
           <option class="a_none" value="none">Remove</option>
         </select>
-        <input name="a_url_input" value="<?php echo $url_a; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
+        <input name="a_url_input" value="<?php echo $url_a; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
-        <select name="b_select" class="mt-2" id="1_select">
+        <select name="b_select" class="mt-2 decorated" id="1_select">
           <option class="b_fa-facebook-f"  value="fa-facebook-f">Facebook</option>
           <option class="b_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="b_fa-instagram" value="fa-instagram">Instagram</option>
           <option class="b_fa-twitter" value="fa-twitter">Twitter</option>
           <option class="b_fa-linkedin" value="fa-linkedin">Iinkedin</option>
           <option class="b_fa-github" value="fa-github">GitHub</option>
-          <option class="b_fa-github" value="fa-github">GitHub</option>
           <option class="b_none" value="none">Remove</option>
         </select>
-        <input name="b_url_input" value="<?php echo $url_b; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
+        <input name="b_url_input" value="<?php echo $url_b; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
-        <select name="c_select" class="mt-2" id="1_select">
+        <select name="c_select" class="mt-2 decorated" id="1_select">
           <option class="c_fa-facebook-f"  value="fa-facebook-f">Facebook</option>
           <option class="c_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="c_fa-instagram" value="fa-instagram">Instagram</option>
@@ -659,10 +849,10 @@ else
           <option class="c_fa-github" value="fa-github">GitHub</option>
           <option class="c_none" value="none">Remove</option>
         </select>
-        <input name="c_url_input" value="<?php echo $url_c; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
+        <input name="c_url_input" value="<?php echo $url_c; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
 
-        <select name="d_select" class="mt-2" id="1_select">
+        <select name="d_select" class="mt-2 decorated" id="1_select">
           <option class="d_fa-facebook-f"  value="fa-facebook-f">Facebook</option>
           <option class="d_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="d_fa-instagram" value="fa-instagram">Instagram</option>
@@ -671,10 +861,10 @@ else
           <option class="d_fa-github" value="fa-github">GitHub</option>
           <option class="d_none" value="none">Remove</option>
         </select>
-        <input name="d_url_input" value="<?php echo $url_d; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
+        <input name="d_url_input" value="<?php echo $url_d; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
 
-        <select name="e_select" class="mt-2" id="1_select">
+        <select name="e_select" class="mt-2 decorated" id="1_select">
           <option class="e_fa-facebook-f"  value="fa-facebook-f">Facebook</option>
           <option class="e_fa-youtube-play"  value="fa-youtube-play">Youtube</option>
           <option class="e_fa-instagram" value="fa-instagram">Instagram</option>
@@ -683,21 +873,28 @@ else
           <option class="e_fa-github" value="fa-github">GitHub</option>
           <option class="e_none" value="none">Remove</option>
         </select>
-        <input name="e_url_input" value="<?php echo $url_e; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="youtube-url">
-
-
+        <input name="e_url_input" value="<?php echo $url_e; ?>" class="mb-2 contact-location" type="url" placeholder="URL" id="social-media-input">
 
       </div>
 
+    <div class="progress_con d-none p-5 d-flex justify-content-center align-content-center ">
+       <div class="progress-center d-flex justify-content-center align-items-center ">
 
+         <div class= "mt-3" style="width:90%;height:25px; background:#E7E7E7; border-radius:5px;">
+            <div class="form-progress-bar h-100 " style="width:0%;border-radius:5px;">
+              <span class="form-progress-percentage bg-success h-100 d-flex justify-content-center align-content-center font-weight-bold text-light">
+                0%
+              </span>
+            </div>
+          </div>
 
-    <input class="submit" type="submit" value="Update">
-    
-    <div class="form-progress-bar d-none h-100 " style="width:0%;border-radius:5px;">
-      <span class="form-progress-percentage bg-success h-100 d-flex justify-content-center align-content-center font-weight-bold text-light">
-        0%
-      </span>
+       </div>
     </div>
+
+    <div class="m-3 mb-4 d-flex justify-content-center align-items-center">
+      <input class="submit" style="border:0px; box-shadow: 0px 1px 18px 2px rgba(0,0,0,0.75);" type="submit" value="Update">
+    </div> 
+
 </form>
     
 
@@ -724,7 +921,7 @@ else
 
 <script>
 
-// Header picture change //
+// Header picture Desktop //
 imgInp.onchange = evt => {
   const [file] = imgInp.files
   if (file) {
@@ -749,6 +946,34 @@ imgInp.onchange = evt => {
 
       
  
+    }
+ 
+  }
+}
+
+// Header picture Mobile //
+imgInp_mobile.onchange = evt => {
+  const [file] = imgInp_mobile.files
+  if (file) {
+   var url = URL.createObjectURL(file);
+
+   var image = new Image();
+    image.src = url;
+    image.onload = function(){
+      var o_width =  image.width;
+      var o_height = image.height;
+
+      var img_name = image.name;
+
+      if(o_width == 719 && o_height == 1280)
+      {
+        blah_mobile_btn.src = URL.createObjectURL(file);
+      }
+
+      else{
+        alert("Image Size 719 x 1280"); 
+      }
+
     }
  
   }
@@ -812,9 +1037,27 @@ $(document).ready(function(){
   $(chek).attr("selected","selected");
 });
 
- 
+$(document).ready(function(){
+   $("#menu-icon,.close-icon").click(function(){ 
 
+      var position = $(".menu-content").css("top");
+      if(position == "0px"){
+        $(".menu-content").css("top", "-100%");
+        // $(".header").css("box-shadow", "0 8px 6px -6px black");
+        $(".close-icon").addClass("d-none");
+        $("#menu-icon").removeClass("d-none");
+        
+      }
 
+      else{
+        $(".menu-content").css("top", "0%");
+        // $(".header").css("box-shadow", "none");
+        $(".close-icon").removeClass("d-none");
+        $("#menu-icon").addClass("d-none");
+      }
+
+   });
+});
 // about picture change //
  
 
